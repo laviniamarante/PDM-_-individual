@@ -1,20 +1,19 @@
+import Botao from "@/components/Botao";
 import { useState } from "react";
 import { Button, FlatList, Text, TextInput, View } from "react-native";
-import {nextId} from "../util/geral";
+import { nextId } from "../util/geral";
 
 export default function Index() {
   const [nome, setNome] = useState('');
   const [lista, setLista] = useState([]);
 
-
-
   function adiciona(){
-    setLista([...lista, {id:nextId(lista), nome: nome}]);
-    setNome ('');
+    setLista([...lista, {id: nextId(lista), nome: nome}]);
+    setNome('');
   }
 
   function remove(id) {
-    setLista( lista.filter( item => item.id!== id ) );
+    setLista( lista.filter( item => item.id !== id ) );
   }
 
   function RenderItem({contato}) {
@@ -74,6 +73,13 @@ export default function Index() {
         style={{
           width: '100%'
         }}
+      />
+      <Botao
+        title="Limpar lista"
+        onPress={ () => setLista([])}
+        color="#0000ff"
+        textColor="#ffffff"
+        style={{ fontWeight: 'bold' }}
       />
     </View>
   );
