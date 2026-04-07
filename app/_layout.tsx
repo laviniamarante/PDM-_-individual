@@ -5,7 +5,9 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen 
       name="index" 
+      //referenciando o arquivo index.tsx
       options={{
+        //titulo
          title: 'Home',
          }} />
     </Stack>

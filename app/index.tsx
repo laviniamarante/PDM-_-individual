@@ -1,5 +1,7 @@
 import Botao from "@/components/Botao";
+//o componente botao foi criado para ser reutilizado em outros lugares, evitando a repetição de código 
 import { useState } from "react";
+//o use state é para definir as propriedades de estado
 import { Button, FlatList, Text, TextInput, View } from "react-native";
 import { nextId } from "../util/geral";
 
@@ -53,6 +55,7 @@ export default function Index() {
       >
         <TextInput
           placeholder="Digite um nome ..."
+          //texto de exemplo para o usuário saber o que deve ser digitado
           value={nome}
           onChangeText={ t => setNome(t)}
           style={{
